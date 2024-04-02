@@ -3,5 +3,4 @@ export default defineAppConfig({
     primary: 'lime',
     gray: 'neutral',
   },
-  modules: ['@nuxtjs/i18n']
 })

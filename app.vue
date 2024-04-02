@@ -1,12 +1,22 @@
 <template>
     <UContainer>
-        <div id="radial-gradient"> {{ x }} {{ y }}</div>
+        <div class="lang_switcher">
+            <button
+                v-if="locale === 'pl'"
+                @click="setLocale('en')"
+            >
+                EN
+            </button>
+            <button v-else @click="setLocale('pl')">PL</button>
+        </div>
+        <div id="radial-gradient"> </div>
         <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
             <div><h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"><a href="/">Przemek
                 Kowalczyk</a></h1>
                 <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Lead Full Stack Developer</h2>
-                <p class="mt-4 max-w-xs leading-normal">I build pixel-perfect, engaging, and accessible digital
-                    experiences.</p>
+                <p class="mt-4 max-w-xs leading-normal">{{ $t('aboutMe')}}</p>
+
+                <h1>{{locale}}</h1>
                 <nav class="nav hidden lg:block" aria-label="In-page jump links">
                     <ul class="mt-16 w-max">
                         <li><a class="group flex items-center py-3 active" href="#about"><span
@@ -94,19 +104,6 @@
                 </a></li>
             </ul>
         </header>
-        <UHorizontalNavigation :links="links" class="border-b border-gray-200 dark:border-gray-800"/>
-        <UCard class="mt-10">
-            <template #header>
-                <div class="flex justify-between">
-                    <h1>Welcome to Nuxt UI Starter</h1>
-                    <ColorScheme>
-                        <USelect v-model="$colorMode.preference" :options="['system', 'light', 'dark']"/>
-                    </ColorScheme>
-                </div>
-            </template>
-            <UButton icon="i-heroicons-book-open" to="https://ui.nuxt.com" target="_blank">Open Nuxt UI Documentation
-            </UButton>
-        </UCard>
     </UContainer>
 </template>
 
@@ -123,24 +120,7 @@ const verticalPixels = computed(() => {
     return y.value + 'px'
 })
 
-const links = [{
-    label: 'Przemek Kowalczyk',
-    avatar: {
-        src: 'https://avatars.githubusercontent.com/u/739984?v=4'
-    },
-}, {
-    label: 'O mnie',
-    icon: 'i-heroicons-home',
-    to: '/getting-started/installation'
-}, {
-    label: 'Horizontal Navigation',
-    icon: 'i-heroicons-chart-bar',
-    to: `${route.path.startsWith('/dev') ? '/dev' : ''}/components/horizontal-navigation`
-}, {
-    label: 'Command Palette',
-    icon: 'i-heroicons-command-line',
-    to: '/components/command-palette'
-}]
+const { locale, setLocale } = useI18n()
 </script>
 
 <style>
@@ -150,15 +130,14 @@ const links = [{
     left:0px;
     height:100%;
     width:100%;
-
-    /*Fallback if gradeints don't work */
-    background: #9b59b6;
-    /*Linear gradient... */
-    //background:
-    //    radial-gradient(
-    //        at v-bind(horizontalPixels) v-bind(verticalPixels), #747480, #000000
-    //    );
-
     background: radial-gradient(600px at v-bind(horizontalPixels) v-bind(verticalPixels), rgba(29, 78, 216, 0.15), transparent 80%);
+}
+
+.lang_switcher {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 1000;
 }
 </style>
