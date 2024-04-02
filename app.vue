@@ -1,6 +1,6 @@
 <template>
     <UContainer>
-        <div class="lang_switcher">
+        <div class="lang_switcher light:text-sk-700">
             <button
                 v-if="locale === 'pl'"
                 @click="setLocale('en')"
@@ -9,12 +9,19 @@
             </button>
             <button v-else @click="setLocale('pl')">PL</button>
         </div>
+        <ClientOnly>
+            <UIcon
+                :name="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
+                class="color_switcher"
+                @click="isDark = !isDark"
+            />
+        </ClientOnly>
         <div id="radial-gradient"> </div>
         <header class="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-            <div><h1 class="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"><a href="/">Przemek
+            <div><h1 class="text-4xl font-bold tracking-tight text-gray-500 sm:text-5xl"><a href="/">Przemek
                 Kowalczyk</a></h1>
-                <h2 class="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Lead Full Stack Developer</h2>
-                <p class="mt-4 max-w-xs leading-normal">{{ $t('aboutMe')}}</p>
+                <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-500 sm:text-xl">Lead Full Stack Developer</h2>
+                <p class="mt-4 max-w-xs text-gray-400">{{ $t('aboutMe')}}</p>
 
                 <h1>{{locale}}</h1>
                 <nav class="nav hidden lg:block" aria-label="In-page jump links">
@@ -121,6 +128,17 @@ const verticalPixels = computed(() => {
 })
 
 const { locale, setLocale } = useI18n()
+
+const colorMode = useColorMode()
+const isDark = computed({
+    get() {
+        return colorMode.value === 'dark'
+    },
+    set() {
+        colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+    }
+})
+
 </script>
 
 <style>
@@ -130,7 +148,22 @@ const { locale, setLocale } = useI18n()
     left:0px;
     height:100%;
     width:100%;
-    background: radial-gradient(600px at v-bind(horizontalPixels) v-bind(verticalPixels), rgba(29, 78, 216, 0.15), transparent 80%);
+    background: radial-gradient(600px at v-bind(horizontalPixels) v-bind(verticalPixels), rgba(253, 184, 19, 0.6), transparent 80%);
+}
+
+.dark #radial-gradient {
+    background: radial-gradient(600px at v-bind(horizontalPixels) v-bind(verticalPixels), rgba(93, 116, 182, 0.4), transparent 80%);
+}
+
+.color_switcher {
+    right: 1rem;
+    top: 1rem;
+    position: fixed;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    z-index: 1000;
+
 }
 
 .lang_switcher {
