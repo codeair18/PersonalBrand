@@ -120,27 +120,27 @@
                 </ul>
             </header>
             <main class="pt-24 lg:w-1/2 lg:py-24">
-                <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
-                    <div
-                        class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
-                    </div>
-                    <div>
-                        <p class="mb-4">
-                        {{ $t('aboutMeExtended') }}
-                        </p>
-                        <p class="mb-4">
-                            W procesie wytwarzania kodu wykorzystuję
-                            <UTooltip :text="$t('aboutMe')" :popper="{ scroll: true }">
+<!--                <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">-->
+<!--                    <div-->
+<!--                        class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">-->
+<!--                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        <p class="mb-4">-->
+<!--                        {{ $t('aboutMeExtended') }}-->
+<!--                        </p>-->
+<!--                        <p class="mb-4">-->
+<!--                            W procesie wytwarzania kodu wykorzystuję-->
+<!--                            <UTooltip :text="$t('aboutMe')" :popper="{ scroll: true }">-->
 
-                                <template #text>
-                                    <span class="italic">{{ $t('aboutMe') }}</span>
-                                </template>
-                                DDD
-                            </UTooltip>
+<!--                                <template #text>-->
+<!--                                    <span class="italic">{{ $t('aboutMe') }}</span>-->
+<!--                                </template>-->
+<!--                                DDD-->
+<!--                            </UTooltip>-->
 
-                            , CQRS, SOLID oraz architekturę heksagonalną. Zintegrowanie tych technik pozwala na tworzenie bardziej wydajnych, skalowalnych i stabilnych aplikacji.
-                        </p>
+<!--                            , CQRS, SOLID oraz architekturę heksagonalną. Zintegrowanie tych technik pozwala na tworzenie bardziej wydajnych, skalowalnych i stabilnych aplikacji.-->
+<!--                        </p>-->
 <!--                        <p>When I’m not at the computer, I’m usually rock climbing, reading, hanging out with my wife-->
 <!--                            and two cats, or running around Hyrule searching for&lt;!&ndash; &ndash;&gt; <span-->
 <!--                                class="group/korok inline-flex lg:cursor-[url('/images/koroks/Elma.png'),_pointer] lg:font-medium lg:text-slate-200"><span-->
@@ -167,7 +167,7 @@
 <!--                                aria-hidden="true">d</span><span-->
 <!--                                class="group-hover/korok:text-violet-400 transition duration-75 group-hover/korok:-translate-y-px delay-[300ms]"-->
 <!--                                aria-hidden="true">s</span></span>.</p></div>-->
-                </section>
+<!--                </section>-->
             </main>
         </div>
     </UContainer>
