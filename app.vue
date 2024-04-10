@@ -21,8 +21,9 @@
             <header class="lg:sticky lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between py-24">
                 <div><h1 class="text-4xl font-bold tracking-tight text-gray-500 sm:text-5xl"><a href="/">Przemek
                     Kowalczyk</a></h1>
-                    <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-500 sm:text-xl">Lead Full Stack
-                        Developer</h2>
+                    <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-500 sm:text-xl">
+                        Lead Senior Engineer
+                    </h2>
                     <p class="mt-4 max-w-xs text-gray-400">{{ $t('aboutMe') }}</p>
                     <nav class="nav hidden lg:block" aria-label="In-page jump links">
                         <ul class="mt-16 w-max">
