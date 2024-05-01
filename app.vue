@@ -19,7 +19,7 @@
         <!--            />-->
     </ClientOnly>
     <div id="radial-gradient"></div>
-    <main class="fixed mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
+    <main class="lg:fixed mx-auto min-h-screen px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div class="lg:flex lg:justify-between lg:gap-4">
             <header class="lg:sticky lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between py-24">
                 <div><h1 class="text-4xl font-bold tracking-tight sm:text-5xl"><a href="/">Przemek
@@ -124,10 +124,6 @@
             </header>
             <main class="hidden-scroll pt-24 lg:w-1/2 lg:py-24">
                 <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
-                    <div
-                        class="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-                        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-200 lg:sr-only">About</h2>
-                    </div>
                     <div>
                         <p class="mb-4">
                             {{ $t('aboutMeExtended') }}
@@ -158,9 +154,9 @@
                             <h4 class="text-xl text-gray-500">
                                 {{ exp.jobPosition }}
                             </h4>
-                            <h6 class="text-sm">
-                                {{ exp.companyName }}
-                            </h6>
+<!--                            <h6 class="text-sm">-->
+<!--                                {{ exp.companyName }}-->
+<!--                            </h6>-->
                             <p class="mt-2 text-sm leading-normal">
                                 {{ $t(exp.i8nCode) }}
                             </p>
@@ -261,7 +257,7 @@ const experience = ref([
     },
     {
         jobPosition: 'Founder',
-        dateInterval: '03.2018 — 2024',
+        dateInterval: '2019 — 2023',
         companyName: '',
         projectName: 'Fashionly (Startup)',
         i8nCode: 'fashionly',
