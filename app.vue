@@ -20,7 +20,7 @@
     <div id="radial-gradient"></div>
     <main class="lg:fixed mx-auto min-h-screen px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div class="lg:flex lg:justify-between lg:gap-4">
-            <header class="lg:sticky lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between py-5 md:py-24">
+            <header class="lg:sticky lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between py-10 md:py-24">
                 <div><h1 class="text-4xl font-bold tracking-tight sm:text-5xl"><a href="/">Przemek
                     Kowalczyk</a></h1>
                     <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-400 sm:text-xl">
@@ -99,7 +99,7 @@
                 </ul>
 
             </header>
-            <main class="lg:overflow-y-auto lg:h-screen hidden-scroll pt-24 lg:w-1/2 lg:py-24">
+            <main class="lg:overflow-y-auto lg:h-screen hidden-scroll pt-6 lg:w-1/2 lg:py-24">
                 <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
                     <div>
                         <p class="mb-4">
