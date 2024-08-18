@@ -4,8 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
-    "dev-https": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.crt --ssl-key localhost.key",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.crt --ssl-key localhost.key",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -18,5 +17,8 @@
     "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.10.1",
     "sass": "^1.72.0"
+  },
+  "dependencies": {
+    "@nuxt/ui-pro": "^1.4.1"
   }
 }

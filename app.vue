@@ -1,49 +1,32 @@
 <template>
-    <div class="lang_switcher light:text-sk-700 text-xl">
-        <button
-            v-if="locale === 'pl'"
-            @click="setLocale('en')"
-        >
-            EN
-        </button>
-        <button v-else @click="setLocale('pl')">PL</button>
-    </div>
-    <ClientOnly>
-        <div class="color_switcher">
-            <SwitcherDayNight/>
+    <nav class="fixed h-auto w-screen z-50">
+        <div class="flex justify-end md:justify-between p-5 items-center">
+            <div class="lang_switcher light:text-sk-700 text-xl">
+                <button
+                    v-if="locale === 'pl'"
+                    @click="setLocale('en')"
+                >
+                    EN
+                </button>
+                <button v-else @click="setLocale('pl')">PL</button>
+            </div>
+            <ClientOnly>
+                <div class="color_switcher">
+                    <UColorModeButton />
+                </div>
+            </ClientOnly>
         </div>
-        <!--            <UIcon-->
-        <!--                :name="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"-->
-        <!--                class="color_switcher"-->
-        <!--                @click="isDark = !isDark"-->
-        <!--            />-->
-    </ClientOnly>
+    </nav>
     <div id="radial-gradient"></div>
     <main class="lg:fixed mx-auto min-h-screen px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
         <div class="lg:flex lg:justify-between lg:gap-4">
-            <header class="lg:sticky lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between py-24">
+            <header class="lg:sticky lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between py-5 md:py-24">
                 <div><h1 class="text-4xl font-bold tracking-tight sm:text-5xl"><a href="/">Przemek
                     Kowalczyk</a></h1>
                     <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-400 sm:text-xl">
                         Lead Software Engineer
                     </h2>
                     <p class="mt-4 max-w-xs">{{ $t('aboutMe') }}</p>
-                    <nav class="nav hidden lg:block" aria-label="In-page jump links">
-                        <ul class="mt-16 w-max">
-                            <li><a class="group flex items-center py-3 active" href="#about"><span
-                                class="nav-indicator mr-4 h-px w-8 transition-all group-hover:w-16 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span
-                                class="nav-text text-xs font-bold uppercase tracking-widest group-focus-visible:text-slate-200">About</span></a>
-                            </li>
-                            <li><a class="group flex items-center py-3" href="#experience"><span
-                                class="nav-indicator mr-4 h-px w-8 transition-all group-hover:w-16 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span
-                                class="nav-text text-xs font-bold uppercase tracking-widest group-focus-visible:text-slate-200">Experience</span></a>
-                            </li>
-                            <li><a class="group flex items-center py-3" href="#projects"><span
-                                class="nav-indicator mr-4 h-px w-8 transition-all group-hover:w-16 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span><span
-                                class="nav-text text-xs font-bold uppercase tracking-widest group-focus-visible:text-slate-200">Projects</span></a>
-                            </li>
-                        </ul>
-                    </nav>
                 </div>
                 <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
                     <li class="mr-5 text-xs shrink-0"><a class="blockŃ™"
@@ -120,9 +103,18 @@
                                 fill=""></path>
                         </svg>
                     </a></li>
+                    <li class="mr-5 text-xs shrink-0">
+                        <a
+                            class="cursor-pointer"
+                            @click="contactMe"
+                        >
+                            kontakt@pkowalczyk.dev
+                        </a>
+                    </li>
                 </ul>
+
             </header>
-            <main class="hidden-scroll pt-24 lg:w-1/2 lg:py-24">
+            <main class="lg:overflow-y-auto lg:h-screen hidden-scroll pt-24 lg:w-1/2 lg:py-24">
                 <section id="about" class="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-label="About me">
                     <div>
                         <p class="mb-4">
@@ -143,20 +135,31 @@
                             :aria-label="exp.dateInterval">{{ exp.dateInterval }}
                         </header>
                         <div class="z-10 sm:col-span-6">
-                            <a
-                                class="inline-flex items-baseline font-medium leading-tight"
-                                :href="exp.projectUrl || ''" target="_blank" rel="noreferrer noopener"
-                                :aria-label="`${exp.projectName} (opens in a new tab)`">
-                                            <span>
-                                                {{ exp.projectName }}
-                                            </span>
-                            </a>
-                            <h4 class="text-xl text-gray-500">
-                                {{ exp.jobPosition }}
-                            </h4>
-<!--                            <h6 class="text-sm">-->
-<!--                                {{ exp.companyName }}-->
-<!--                            </h6>-->
+                            <div class="flex items-center gap-2">
+                                <h4 class="text-xl text-gray-400">
+                                    {{ exp.jobPosition }}
+                                </h4>
+                                · <a :href="exp.companyLink"
+                                     target="_blank">{{ exp.companyName }}</a>
+                                <UTooltip
+                                    v-if="exp.isPartTime"
+                                    text="Part time"
+                                    :popper="{ placement: 'top'}"
+                                >
+                                    <UIcon name="mdi:clock-time-five-outline"/>
+                                </UTooltip>
+                            </div>
+
+                            <div v-if="exp.projects" class="flex gap-2 w-full">
+                                <div v-for="project in exp.projects" class="items-center flex gap-1">
+                                            <UIcon
+                                                name="i-ph-link"
+                                                dynamic
+                                            />
+                                    <a :href="project.url" target="_blank">{{ project.name }}</a>
+                                </div>
+                            </div>
+
                             <p class="mt-2 text-sm leading-normal">
                                 {{ $t(exp.i8nCode) }}
                             </p>
@@ -184,8 +187,11 @@
 <script setup lang="ts">
 
 const route = useRoute()
-
 const {x, y} = useMouse()
+const {locale, setLocale} = useI18n()
+
+const colorMode = useColorMode()
+colorMode.value = 'dark'
 
 const horizontalPixels = computed(() => {
     return x.value + 'px'
@@ -195,88 +201,100 @@ const verticalPixels = computed(() => {
     return y.value + 'px'
 })
 
-const {locale, setLocale} = useI18n()
+onMounted(() => {
+    window.addEventListener('scroll', () => {
+        const navigation = document.querySelector('nav');
 
-const colorMode = useColorMode()
-colorMode.value = 'dark'
+        // if (!navigation) {
+        //     return;
+        // }
+
+        // if (window.scrollY > 0) {
+        //     navigation.classList.add('scrolled')
+        // } else {
+        //     navigation.classList.remove('scrolled')
+        // }
+
+    });
+})
+
+const contactMe = () => {
+    window.location.href = "mailto:kontakt@pkowalczyk.dev?subject=Kontakt&body=W%20czym%20mogę%20pomóc%3F";
+}
 
 const experience = ref([
     {
-        jobPosition: 'Software Engineer',
-        dateInterval: '06.2023 — ',
-        companyName: 'Comperia',
-        projectName: 'Comfino',
-        projectUrl: 'https://www.comfino.pl',
-        i8nCode: 'comfinoFirst',
-        skills: ["PHP", 'Symfony', 'JavaScript', 'Vue', 'Nuxt', 'K8S', 'Docker', 'Google Cloud Platform', 'Microservices', 'DDD', 'CQRS', 'Scrum']
-    },
-    {
-        jobPosition: 'Software Developer',
+        jobPosition: 'Full-stack Developer',
         dateInterval: '01.2023 — 06.2023',
         companyName: 'UmbrellAI',
-        projectName: 'UmbrellAI (Startup)',
-        projectUrl: 'https://umbrell.ai/',
+        isPartTime: true,
+        companyLink: 'https://umbrell.ai',
+        projectUrl: 'https://umbrell.ai',
+        projects: [
+            {
+                name: 'UmbrellAI',
+                url: 'https://umbrell.ai'
+            },
+        ],
         i8nCode: 'umbrellAi',
-        skills: ['JavaScript', 'TypeScript', 'Vue', 'Nuxt', 'Docker']
+        skills: ['JavaScript', 'TypeScript', 'Vue', 'Nuxt', 'Docker', 'Node.js']
     },
     {
         jobPosition: 'Software Developer',
         dateInterval: '2022 — 06.2023',
         companyName: 'SilkyCoders',
-        projectName: 'Product Content Managment',
-        projectUrl: 'https://www.silkycoders.pl',
+        companyLink: 'https://silkycoders.pl',
+        projectUrl: 'https://silkycoders.pl',
         i8nCode: 'silkyCoders',
         skills: ["PHP", 'Symfony', 'Docker', 'Jenkins', 'DDD', 'CQRS', 'Scrum']
     },
-    {
-        jobPosition: 'Software Engineer',
-        dateInterval: '2020 — 2022',
-        companyName: 'Comperia',
-        projectName: 'Comfino',
-        projectUrl: 'https://www.comfino.pl',
-        i8nCode: 'comfinoFirst',
-        skills: ["PHP", 'Symfony', 'JavaScript', 'Vue', 'Nuxt', 'K8S', 'Docker', 'Google Cloud Platform', 'Microservices']
-    },
+
     {
         jobPosition: 'Software Developer',
         dateInterval: '2019 — 2020',
+        isPartTime: true,
         companyName: 'PragmaticAd',
-        projectName: 'PragmaBox',
-        projectUrl: 'https://www.pragmaticad.com',
+        companyLink: 'https://pragmaticad.com',
+        projectUrl: 'https://pragmaticad.com',
         i8nCode: 'pragmaticAd',
         skills: ['JavaScript', 'Node.js']
     },
     {
-        jobPosition: 'Software Developer',
-        dateInterval: '2019 — 2020',
-        companyName: 'Comperia',
-        projectName: 'ComperiaRaty',
-        projectUrl: 'https://www.comperiaraty.pl',
-        i8nCode: 'comperiaRaty',
-        skills: ["PHP", 'Symfony', 'JavaScript', 'K8S', 'Vue', 'Nuxt', 'Docker', 'Google Cloud Platform', 'Microservices']
-    },
-    {
         jobPosition: 'Founder',
         dateInterval: '2019 — 2023',
-        companyName: '',
-        projectName: 'Fashionly (Startup)',
+        isPartTime: true,
+        companyName: 'Fashionly',
+        companyLink: 'https://www.pkowalczyk.dev',
         i8nCode: 'fashionly',
         skills: ["PHP", 'Symfony', 'JavaScript', 'Vue', 'Nuxt', 'Docker']
     },
     {
-        jobPosition: 'Software Developer',
+        jobPosition: 'Software Engineer',
         dateInterval: '03.2018 — 2019',
         companyName: 'Comperia',
-        projectName: 'Telepolis',
-        projectUrl: 'https://www.telepolis.pl',
-        i8nCode: 'telepolis',
-        skills: ["PHP", 'Symfony', 'JavaScript', 'Node.js']
+        companyLink: 'https://comperia.pl',
+        projectUrl: 'https://telepolis.pl',
+        projects: [
+            {
+                name: 'Telepolis',
+                url: 'https://telepolis.pl'
+            },
+            {
+                name: 'ComperiaRaty',
+                url: 'https://comperiaraty.pl'
+            },
+            {
+                name: 'Comfino',
+                url: 'https://comfino.pl'
+            },
+        ],
+        i8nCode: 'firstComperia',
+        skills: ["PHP", 'Symfony', 'JavaScript', 'Vue', 'Nuxt', 'K8S', 'Docker', 'Google Cloud Platform', 'Microservices']
     },
     {
         jobPosition: 'Web Developer',
         dateInterval: '11.2016 - 03.2018',
-        companyName: 'Konsult Expert (Startup)',
-        projectName: null,
+        companyName: 'Konsult Expert',
         i8nCode: 'konsultExpert',
         skills: ["PHP", 'Symfony', 'JavaScript']
     }
@@ -288,9 +306,9 @@ const experience = ref([
 :root {
     --sun-color: rgba(245, 235, 66, 0.65);
     //--sun-link-color: #E4C74D;
-    --sun-link-color: #41980a;
-    --sun-link-color-hover: #52c50e;
-    --moon-link-color: rgba(200, 197, 190, 0.4);
+    --sun-link-color: #209bcf;
+    --sun-link-color-hover: #1979a1;
+    --moon-link-color: #c0b6a0;
     --moon-link-color-hover: rgba(255, 253, 242, 0.4);
     ---bg-color: light-dark(white, #121212);
     --moon-color: rgba(255, 253, 242, 0.4);
@@ -302,18 +320,16 @@ body {
 
 //light-dark( <color>, <color> )
 .experience {
-    &__tech div{
+    &__tech div {
         color: var(--sun-link-color);
-        background-color: white;
+        background-color: aliceblue;
     }
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .hidden-scroll {
-    overflow-y: auto;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    height: 100vh;
 
     &::-webkit-scrollbar {
         display: none;
@@ -330,26 +346,11 @@ body {
     z-index: -100;
 }
 
-a{
+a {
     color: var(--sun-link-color);
 
     &:hover {
         color: var(--sun-link-color-hover);
-    }
-}
-
-nav li {
-    color: var(--sun-link-color);
-
-    .nav-indicator {
-        background-color: var(--sun-link-color);
-    }
-
-    &:hover {
-        color: var(--sun-link-color-hover);
-        .nav-indicator {
-            background-color: var(--sun-link-color-hover);
-        }
     }
 }
 
@@ -362,47 +363,39 @@ nav li {
         }
     }
 
-    nav li {
-        color: var(--moon-link-color);
-
-        .nav-indicator {
-            background-color: var(--moon-link-color);
-        }
-
-        &:hover {
-            color: var(--moon-link-color-hover);
-            .nav-indicator {
-                background-color: var(--moon-link-color-hover);
-            }
+    .experience {
+        &__tech div {
+            color: #fffdf2;
+            background-color: #484848;
         }
     }
 
-    .experience {
-        &__tech div{
-            color: var(--moon-link-color);
-            background-color: var(---bg-color);
-        }
+    .color_switcher span {
+        color: var(--moon-link-color);
     }
 
 }
+
 
 .dark #radial-gradient {
     background: radial-gradient(600px at v-bind(horizontalPixels) v-bind(verticalPixels), var(--moon-color), transparent 80%);
 }
 
+nav {
+    transition: background-color 0.4s ease-in-out;
+
+    &.scrolled {
+        background-color: white
+    }
+}
+
 .color_switcher {
-    right: 1rem;
-    top: 1rem;
-    position: fixed;
     cursor: pointer;
     z-index: 1000;
 
 }
 
 .lang_switcher {
-    position: fixed;
-    left: 1rem;
-    top: 1rem;
     cursor: pointer;
     z-index: 1000;
 }

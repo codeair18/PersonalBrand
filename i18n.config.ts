@@ -13,8 +13,9 @@ export default defineI18nConfig(() => ({
             comperiaRaty: 'Rozwijanie aplikacji webowej umożliwiającej otrzymanie pożyczki gotówkowej w procesie on-line.',
             pragmaticAd: 'Rozwój oraz wsparcie w utrzymaniu skryptu trackującego działaność użytkownika.',
             comfino: 'Współprojketowanie architektury, rozwój instytucji płatnicznej agregującej płatności odroczone.',
-            silkyCoders: 'TODO',
-            umbrellAi: 'TODO',
+            silkyCoders: 'Przeprojektowanie starych, mało wydajnych funkcjonalności oraz rozwój wewnętrznej aplikacji do zarządzania produktami detalicznymi.',
+            umbrellAi: 'Rozwój aplikacji agregującej towarzystwa ubzpieczeniowe, która umożliwia zakup polisy przez internet',
+            firstComperia: 'Przeprojektowanie oraz przepisanie telekomunikacyjnego serwisu informacyjnego na nową technologię. Rozwijanie aplikacji webowej umożliwiającej otrzymanie pożyczki gotówkowej w procesie on-line. Współprojketowanie architektury, rozwój instytucji płatnicznej agregującej płatności odroczone.'
         },
         en: {
             aboutMe: 'I create efficient, scalable and customer-friendly digital products.',
@@ -27,7 +28,9 @@ export default defineI18nConfig(() => ({
             comperiaRaty: 'Developing a web application to obtain a cash loan through an online process.',
             pragmaticAd: 'Development and support in the maintenance of a script tracing user activity.',
             comfino: 'Co-projection of architecture, development of payment institution aggregating deferred payments.',
-            umbrellAi: 'TODO',
+            silkyCoders: 'Redesign of old, inefficient functionality and development of internal product management application.',
+            umbrellAi: 'Development of an application aggregating insurance companies, which allows the purchase of a policy online.',
+            firstComperia: 'Redesign and rewrite of telecommunications information service to new technology. Developing a web application to obtain a cash loan through an online process. Co-projection of architecture, development of payment institution aggregating deferred payments.'
         },
     }
 }))

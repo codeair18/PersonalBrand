@@ -82,7 +82,6 @@ FCFCFC - stars
     position: relative;
     display: inline-block;
     width: 100px;
-    margin-left: 100px;
     padding: 4px;
     border-radius: 40px;
 }
