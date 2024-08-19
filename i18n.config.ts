@@ -15,7 +15,8 @@ export default defineI18nConfig(() => ({
             comfino: 'Współprojketowanie architektury, rozwój instytucji płatnicznej agregującej płatności odroczone.',
             silkyCoders: 'Przeprojektowanie starych, mało wydajnych funkcjonalności oraz rozwój wewnętrznej aplikacji do zarządzania produktami detalicznymi.',
             umbrellAi: 'Rozwój aplikacji agregującej towarzystwa ubzpieczeniowe, która umożliwia zakup polisy przez internet',
-            firstComperia: 'Przeprojektowanie oraz przepisanie telekomunikacyjnego serwisu informacyjnego na nową technologię. Rozwijanie aplikacji webowej umożliwiającej otrzymanie pożyczki gotówkowej w procesie on-line. Współprojketowanie architektury, rozwój instytucji płatnicznej agregującej płatności odroczone.'
+            firstComperia: 'Przeprojektowanie oraz przepisanie telekomunikacyjnego serwisu informacyjnego na nową technologię. Rozwijanie aplikacji webowej umożliwiającej otrzymanie pożyczki gotówkowej w procesie on-line. Współprojketowanie architektury, rozwój instytucji płatnicznej agregującej płatności odroczone.',
+            secondComperia: 'TODO',
         },
         en: {
             aboutMe: 'I create efficient, scalable and customer-friendly digital products.',
@@ -30,7 +31,8 @@ export default defineI18nConfig(() => ({
             comfino: 'Co-projection of architecture, development of payment institution aggregating deferred payments.',
             silkyCoders: 'Redesign of old, inefficient functionality and development of internal product management application.',
             umbrellAi: 'Development of an application aggregating insurance companies, which allows the purchase of a policy online.',
-            firstComperia: 'Redesign and rewrite of telecommunications information service to new technology. Developing a web application to obtain a cash loan through an online process. Co-projection of architecture, development of payment institution aggregating deferred payments.'
+            firstComperia: 'Redesign and rewrite of telecommunications information service to new technology. Developing a web application to obtain a cash loan through an online process. Co-projection of architecture, development of payment institution aggregating deferred payments.',
+            secondComperia: 'TODO',
         },
     }
 }))

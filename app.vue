@@ -186,23 +186,6 @@ const verticalPixels = computed(() => {
     return y.value + 'px'
 })
 
-onMounted(() => {
-    window.addEventListener('scroll', () => {
-        const navigation = document.querySelector('nav');
-
-        // if (!navigation) {
-        //     return;
-        // }
-
-        // if (window.scrollY > 0) {
-        //     navigation.classList.add('scrolled')
-        // } else {
-        //     navigation.classList.remove('scrolled')
-        // }
-
-    });
-})
-
 const contactMe = () => {
     window.location.href = "mailto:kontakt@pkowalczyk.dev?subject=Kontakt&body=W%20czym%20mogę%20pomóc%3F";
 }
@@ -289,10 +272,10 @@ const experience = ref([
 
 <style lang="scss">
 :root {
-    --sun-color: rgba(245, 235, 66, 0.65);
+    --sun-color: #ffbc42;
     //--sun-link-color: #E4C74D;
-    --sun-link-color: #209bcf;
-    --sun-link-color-hover: #1979a1;
+    --sun-link-color: #0496ff;
+    --sun-link-color-hover: #006ba6;
     --moon-link-color: #c0b6a0;
     --moon-link-color-hover: rgba(255, 253, 242, 0.4);
     ---bg-color: light-dark(white, #121212);
@@ -321,15 +304,28 @@ body {
     }
 }
 
-#radial-gradient {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    background: radial-gradient(600px at v-bind(horizontalPixels) v-bind(verticalPixels), var(--sun-color), transparent 90%);
-    z-index: -100;
+@media only screen and (max-width: 600px) {
+    body {
+        background: linear-gradient(184deg, var(---bg-color) 10%, var(--sun-color) 100%);
+    }
+
+    .dark body {
+        background: linear-gradient(184deg, var(---bg-color) 10%, var(--moon-color) 100%);
+    }
 }
+
+@media only screen and (min-width: 600px) {
+    #radial-gradient {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(600px at v-bind(horizontalPixels) v-bind(verticalPixels), var(--sun-color), transparent 90%);
+        z-index: -100;
+    }
+}
+
 
 a {
     color: var(--sun-link-color);
