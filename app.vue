@@ -1,6 +1,6 @@
 <template>
     <nav class="fixed h-auto w-screen z-50">
-        <div class="flex justify-end md:justify-between p-5 items-center">
+        <div class="flex justify-end md:justify-between p-5 items-center gap-2">
             <div class="lang_switcher light:text-sk-700 text-xl">
                 <button
                     v-if="locale === 'pl'"
@@ -333,6 +333,10 @@ a {
     &:hover {
         color: var(--sun-link-color-hover);
     }
+}
+
+.color_switcher span {
+    color: var(--sun-color);
 }
 
 .dark {
