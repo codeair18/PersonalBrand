@@ -26,7 +26,7 @@
                     <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-400 sm:text-xl">
                         Lead Software Engineer
                     </h2>
-                    <p class="mt-4 max-w-xs">{{ $t('aboutMe') }}</p>
+                    <p class="mt-4 max-w-md">{{ $t('aboutMe') }}</p>
                 </div>
                 <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
                     <li class="mr-5 text-xs shrink-0 cursor-pointer">
