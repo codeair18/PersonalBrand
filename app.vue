@@ -200,8 +200,38 @@ const contactMe = () => {
 }
 
 const experience = ref([
+  {
+    jobPosition: 'Lead Fullstack Developer',
+    dateInterval: '06.2023 — __.____',
+    companyName: 'Comperia Pay',
+    isPartTime: false,
+    companyLink: 'https://comfino.pl',
+    projects: [
+      {
+        name: 'Comfino',
+        url: 'https://comfino.pl'
+      },
+    ],
+    i8nCode: 'comperiaPay',
+    skills: ['PHP', 'Symfony', 'Vue', 'Nuxt', 'Docker', 'Node.js', 'Kubernetes', 'Google Cloud Platform']
+  },
+  {
+    jobPosition: 'Founder',
+    dateInterval: '04.2024 — __.____',
+    companyName: 'Cvior',
+    isPartTime: true,
+    companyLink: 'https://cvior.com',
+    projects: [
+      {
+        name: 'Cvior',
+        url: 'https://cvior.com'
+      },
+    ],
+    i8nCode: 'cvior',
+    skills: ['JavaScript', 'TypeScript', 'Vue', 'Nuxt', 'Docker', 'Node.js', 'Kubernetes']
+  },
     {
-        jobPosition: 'Full-stack Developer',
+        jobPosition: 'Fullstack Developer',
         dateInterval: '01.2023 — 06.2023',
         companyName: 'UmbrellAI',
         isPartTime: true,
@@ -217,7 +247,7 @@ const experience = ref([
         skills: ['JavaScript', 'TypeScript', 'Vue', 'Nuxt', 'Docker', 'Node.js']
     },
     {
-        jobPosition: 'Software Developer',
+        jobPosition: 'Symfony Developer',
         dateInterval: '2022 — 06.2023',
         companyName: 'SilkyCoders',
         companyLink: 'https://silkycoders.pl',
@@ -246,7 +276,7 @@ const experience = ref([
         skills: ["PHP", 'Symfony', 'JavaScript', 'Vue', 'Nuxt', 'Docker']
     },
     {
-        jobPosition: 'Software Engineer',
+        jobPosition: 'Fullstack Developer',
         dateInterval: '03.2018 — 2019',
         companyName: 'Comperia',
         companyLink: 'https://comperia.pl',
