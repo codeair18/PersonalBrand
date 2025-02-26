@@ -175,7 +175,7 @@ useHead({
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
-  title: 'Przemek Kowalczyk - AI Developer',
+  title: 'Przemek Kowalczyk - Developer',
 })
 
 const route = useRoute()
