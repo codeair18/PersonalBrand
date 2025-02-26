@@ -24,7 +24,7 @@
                 <div><h1 class="text-4xl font-bold tracking-tight sm:text-5xl"><a href="/">Przemek
                     Kowalczyk</a></h1>
                     <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-400 sm:text-xl">
-                        Lead Software Engineer
+                        Developer
                     </h2>
                     <p class="mt-4 max-w-md">{{ $t('aboutMe') }}</p>
                 </div>
@@ -175,9 +175,7 @@ useHead({
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
   ],
-  link: [
-    { rel: 'icon', href: '/favicon.svg' }
-  ],
+  title: 'Przemek Kowalczyk - AI Developer',
 })
 
 const route = useRoute()
