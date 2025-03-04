@@ -17,7 +17,8 @@ export default defineI18nConfig(() => ({
             umbrellAi: 'Przekrojowy rozwój aplikacji agregującej firmy ubezpieczeniowe, umożliwiającej zakup polisy on-line.',
             firstComperia: 'Utrzymywanie legacy, rozwój nowych funkcjonalności oraz współprojektowanie architektury produktów w grupie Comperia.',
             comperiaPay: 'Pomagam przekładać biznesowe wymagania na techniczne rozwiązania. Współpracuję z zespołem w celu zapewnienia stabilności, skalowalności oraz łatwego dostępu do funkcjonalności aplikacji.',
-            cvior: 'Rozwijam, testuję i utrzymuję aplikację. Ogólnie rzecz biorąc, zajmuję się wszystkim. PS. Jestem otwarty na współpracę.'
+            cvior: 'Rozwijam, testuję i utrzymuję aplikację. Ogólnie rzecz biorąc, zajmuję się wszystkim. PS. Jestem otwarty na współpracę.',
+            present: 'obecnie'
         },
         en: {
             aboutMe: 'I help create tailor-made solutions for the business and optimise the implementation processes.',
@@ -34,7 +35,8 @@ export default defineI18nConfig(() => ({
             umbrellAi: 'Development of an application aggregating insurance companies, which allows the purchase of a policy online.',
             firstComperia: 'Redesign and rewrite of telecommunications information service to new technology. Developing a web application to obtain a cash loan through an online process. Co-projection of architecture, development of payment institution aggregating deferred payments.',
             comperiaPay: 'Polish financial platform offering payment solutions and purchase financing for e-commerce and services. It enables customers to make installment payments, supporting online sales growth and facilitating larger purchases. The platform ensures easy integration with store systems and provides transparent and secure transaction conditions.',
-            cvior: 'Cvior allows users to generate a CV based on their LinkedIn profile or a PDF file, automatically processing data and filling in templates. The user can customize the appearance and content of the CV by choosing different styles and layouts.'
+            cvior: 'Cvior allows users to generate a CV based on their LinkedIn profile or a PDF file, automatically processing data and filling in templates. The user can customize the appearance and content of the CV by choosing different styles and layouts.',
+            present: 'present'
         },
     }
 }))
