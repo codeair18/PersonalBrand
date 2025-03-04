@@ -19,8 +19,16 @@
   <main class="lg:fixed mx-auto min-h-screen px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
     <div class="lg:flex lg:justify-between lg:gap-4">
       <header class="lg:sticky lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between py-5 md:py-24">
-        <div><h1 class="text-4xl font-bold tracking-tight sm:text-5xl"><a href="/">Przemek
-          Kowalczyk</a></h1>
+        <div>
+          <UAvatar
+            src="/android-chrome-512x512.png"
+            class="mb-5"
+            alt="Avatar"
+            size="3xl"
+          />
+          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+            <a href="/">Przemek Kowalczyk</a>
+          </h1>
           <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-400 sm:text-xl">
             Developer
           </h2>
