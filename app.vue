@@ -34,6 +34,17 @@
           </h2>
           <p class="mt-4 max-w-md">{{ $t('aboutMe') }}</p>
         </div>
+        <ul class="experience__tech mt-2 flex flex-wrap">
+          <li
+            v-for="skill in skills"
+            class="mr-1.5 mt-2"
+          >
+            <div
+              class="flex items-center rounded-full px-3 py-1 text-xs font-medium leading-5">
+              {{ skill }}
+            </div>
+          </li>
+        </ul>
         <ul class="ml-1 mt-8 flex items-center" aria-label="Social media">
           <li class="mr-5 text-xs shrink-0 cursor-pointer">
             <a
@@ -385,6 +396,13 @@ const experience = ref([
   }
 ])
 
+const skills = ref([]);
+for (const exp of experience.value) {
+  skills.value = skills.value.concat(exp.skills);
+}
+skills.value = [...new Set(skills.value)];
+
+console.log(skills.value)
 </script>
 
 <style lang="scss">
@@ -407,8 +425,8 @@ body {
 }
 
 //light-dark( <color>, <color> )
-.experience {
-  &__tech div {
+.experience__tech {
+  div {
     color: var(--sun-link-color);
     background-color: aliceblue;
   }
