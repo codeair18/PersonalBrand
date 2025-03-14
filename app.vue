@@ -34,7 +34,7 @@
           </h2>
           <p class="mt-4 max-w-md">{{ $t('aboutMe') }}</p>
         </div>
-        <ul class="experience__tech mt-2 flex flex-wrap">
+        <ul class="experience__tech my-5 lg:mt-2 flex flex-wrap lg:mr-32">
           <li
             v-for="skill in skills"
             class="mr-1.5 mt-2"
