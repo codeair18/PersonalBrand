@@ -321,8 +321,13 @@ skills.value = [...new Set(skills.value)];
 
 const route = useRoute();
 const cvClause = useI18n().t('cvClause');
-const companyNames = (route.query.companies as string) || 'youbrand.one and 4Human';
+const companiesFromUrl = route.query.companies as string || undefined;
+let companyNames = ''
+if (companiesFromUrl) {
+  companyNames = 'przez ' + companiesFromUrl;
+}
 const cvClauseFinal = cvClause.replace('__COMPANY_NAMES__', companyNames);
+
 
 </script>
 <template>
@@ -355,23 +360,6 @@ const cvClauseFinal = cvClause.replace('__COMPANY_NAMES__', companyNames);
       <p>
         {{ $t('aboutMeExtended') }}
       </p>
-      <ul class="mt-8">
-        <li class="mr-5 text-xl flex items-center gap-2 cursor-pointer">
-          <p>Email:</p>
-          <a class="cursor-pointer">
-            kontakt@pkowalczyk.dev
-          </a>
-          <a class="cursor-pointer">
-            codeair18@gmail.com
-          </a>
-        </li>
-        <li class="mr-5 text-xl flex items-center gap-2 cursor-pointer">
-          <p>Phone:</p>
-          <a class="cursor-pointer">
-            +48 796 069 415
-          </a>
-        </li>
-      </ul>
     </div>
     <section class="experience">
       <UPageHeader title="Experience" class="my-2"/>
@@ -521,6 +509,21 @@ const cvClauseFinal = cvClause.replace('__COMPANY_NAMES__', companyNames);
 <!--          </svg>-->
 <!--        </a>-->
 <!--      </li>-->
+      <li class="mr-5 text-xs shrink-0 cursor-pointer">
+        <a class="cursor-pointer">
+          kontakt@pkowalczyk.dev
+        </a>
+      </li>
+      <li class="mr-5 text-xs shrink-0 cursor-pointer">
+        <a class="cursor-pointer">
+          codeair18@gmail.com
+        </a>
+      </li>
+      <li class="mr-5 text-xs shrink-0 cursor-pointer">
+        <a class="cursor-pointer">
+          +48 796 069 415
+        </a>
+      </li>
     </ul>
 
     <section class="my-5">
