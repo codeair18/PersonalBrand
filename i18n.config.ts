@@ -18,7 +18,7 @@ export default defineI18nConfig(() => ({
             firstComperia: 'Utrzymywanie legacy, rozwój nowych funkcjonalności oraz współprojektowanie architektury produktów w grupie Comperia.',
             comperiaPay: 'Pomagam przekładać biznesowe wymagania na techniczne rozwiązania. Współpracuję z zespołem w celu zapewnienia stabilności, skalowalności oraz łatwego dostępu do funkcjonalności aplikacji.',
             cvior: 'Rozwijam, testuję i utrzymuję aplikację. Ogólnie rzecz biorąc, zajmuję się wszystkim. PS. Jestem otwarty na współpracę.',
-            cvClause: 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez __COMPANY_NAMES__ w celu prowadzenia rekrutacji na aplikowane przeze mnie stanowisko.',
+            cvClause: 'Wyrażam zgodę na przetwarzanie moich danych osobowych __COMPANY_NAMES__ w celu prowadzenia rekrutacji na aplikowane przeze mnie stanowisko.',
             experience: 'Doświadczenie',
             education: 'Wykształcenie',
             email: 'Email',

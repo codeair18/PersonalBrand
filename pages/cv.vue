@@ -319,9 +319,10 @@ for (const exp of experience.value) {
 }
 skills.value = [...new Set(skills.value)];
 
+const route = useRoute();
 const cvClause = useI18n().t('cvClause');
-
-const cvClauseFinal = cvClause.replace('__COMPANY_NAMES__', 'youbrand.one and 4Human');
+const companyNames = (route.query.companies as string) || 'youbrand.one and 4Human';
+const cvClauseFinal = cvClause.replace('__COMPANY_NAMES__', companyNames);
 
 </script>
 <template>
