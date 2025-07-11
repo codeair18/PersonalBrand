@@ -2,13 +2,13 @@
   <nav class="fixed h-auto w-screen z-50">
     <div class="flex md:justify-between p-5 items-center gap-2">
       <div class="lang_switcher light:text-sk-700 text-xl">
-        <!--        <button-->
-        <!--          v-if="locale === 'pl'"-->
-        <!--          @click="setLocale('en')"-->
-        <!--        >-->
-        <!--          EN-->
-        <!--        </button>-->
-        <!--        <button v-else @click="setLocale('pl')">PL</button>-->
+                <button
+                  v-if="locale === 'pl'"
+                  @click="setLocale('en')"
+                >
+                  EN
+                </button>
+                <button v-else @click="setLocale('pl')">PL</button>
       </div>
     </div>
   </nav>
@@ -172,8 +172,8 @@
 
               <div class="ml-4 text-sm leading-normal">
                 <ul class="list-disc">
-                  <li v-for="resp in exp.responsibilities" class="my-2">
-                    <span v-html="resp"></span>
+                  <li v-for="respKey in exp.responsibilityKeys" class="my-2">
+                    <span v-html="$t(respKey)"></span>
                   </li>
                 </ul>
                 <!--                {{ $t(exp.i8nCode) }}-->
@@ -250,12 +250,12 @@ const experience = ref([
         url: 'https://comfino.pl'
       },
     ],
-    responsibilities: [
-      'Współpraca z interesariuszami w celu <b>analizy wymagań biznesowych i ich implementacji w architekturze systemu.</b>',
-      'Mentoring i wsparcie dla zespołu programistycznego, wprowadzanie <b>dobrych praktyk kodowania oraz DevOps.</b>',
-      'Odpowiedzialność za <b>stabilność i optymalizację systemów,</b> zapewniając <b>wysoką wydajność oraz bezpieczeństwo.</b>',
-      'Tworzenie i rozwój <b>mikroserwisowej architektury</b> w środowisku <b>Docker/Kubernetes</b> na <b>Google Cloud Platform.</b>',
-      'Projektowanie i wdrażanie skalowalnych aplikacji webowych opartych na <b>PHP (Symfony), Vue, Nuxt, Node.js.</b>',
+    responsibilityKeys: [
+      'comperiaPayResp1',
+      'comperiaPayResp2',
+      'comperiaPayResp3',
+      'comperiaPayResp4',
+      'comperiaPayResp5',
     ],
     i8nCode: 'comperiaPay',
     skills: ['PHP', 'Symfony', 'Vue', 'Nuxt', 'Docker', 'Node.js', 'Kubernetes', 'Google Cloud Platform']
@@ -275,10 +275,10 @@ const experience = ref([
       },
     ],
     i8nCode: 'cvior',
-    responsibilities: [
-      'Projektowanie, rozwój i utrzymanie aplikacji – zarządzam całym procesem wytwarzania oprogramowania.',
-      'Optymalizacja infrastruktury, zapewniająca <b>wysoką wydajność i skalowalność.</b>',
-      'Wdrożenie CI/CD oraz orkiestracja mikroserwisów w Kubernetesie.',
+    responsibilityKeys: [
+      'cviorResp1',
+      'cviorResp2',
+      'cviorResp3',
     ],
     skills: ['JavaScript', 'TypeScript', 'Vue', 'Nuxt', 'Docker', 'Node.js', 'Kubernetes']
   },
@@ -298,10 +298,10 @@ const experience = ref([
       },
     ],
     i8nCode: 'umbrellAi',
-    responsibilities: [
-      'Rozwój aplikacji agregującej firmy ubezpieczeniowe, umożliwiającej zakup polis online.',
-      'Projektowanie oraz implementacja nowych funkcjonalności w <b>Vue, Nuxt, Node.js.</b>',
-      'Optymalizacja procesów backendowych i integracja z API firm ubezpieczeniowych.'
+    responsibilityKeys: [
+      'umbrellAiResp1',
+      'umbrellAiResp2',
+      'umbrellAiResp3',
     ],
     skills: ['JavaScript', 'TypeScript', 'Vue', 'Nuxt', 'Docker', 'Node.js']
   },
@@ -314,10 +314,10 @@ const experience = ref([
     companyLink: 'https://silkycoders.pl',
     projectUrl: 'https://silkycoders.pl',
     i8nCode: 'silkyCoders',
-    responsibilities: [
-      'Przeprojektowanie <b>starych, mało wydajnych funkcjonalności</b> oraz rozwój systemu zarządzania produktami detalicznymi.',
-      'Implementacja <b>DDD</b> i <b>CQRS</b> w celu poprawy wydajności oraz zarządzania danymi.',
-      'Wdrożenie automatycznych testów jednostkowych oraz integracyjnych.'
+    responsibilityKeys: [
+      'silkyCodersResp1',
+      'silkyCodersResp2',
+      'silkyCodersResp3',
     ],
     skills: ["PHP", 'Symfony', 'Docker', 'Jenkins', 'DDD', 'CQRS', 'Scrum']
   },
@@ -331,9 +331,9 @@ const experience = ref([
     companyLink: 'https://pragmaticad.com',
     projectUrl: 'https://pragmaticad.com',
     i8nCode: 'pragmaticAd',
-    responsibilities: [
-      'Rozwój i utrzymanie skryptu analizy zachowań użytkowników.',
-      'Wsparcie techniczne przy integracjach wdrażaniu skryptów partnerów.'
+    responsibilityKeys: [
+      'pragmaticAdResp1',
+      'pragmaticAdResp2',
     ],
     skills: ['JavaScript', 'Node.js']
   },
@@ -346,8 +346,8 @@ const experience = ref([
     companyName: 'Fashionly',
     companyLink: 'https://www.pkowalczyk.dev',
     i8nCode: 'fashionly',
-    responsibilities: [
-      'Budowa aplikacji agregującej produkty afiliacyjne z branży odzieżowej.',
+    responsibilityKeys: [
+      'fashionlyResp1',
     ],
     skills: ["PHP", 'Symfony', 'JavaScript', 'Vue', 'Nuxt', 'Docker']
   },
@@ -374,9 +374,9 @@ const experience = ref([
       },
     ],
     i8nCode: 'firstComperia',
-    responsibilities: [
-      'Rozwój i utrzymanie systemów finansowych oraz migracja do Google Cloud Platform.',
-      'Projektowanie architektury mikroserwisów oraz integracja API bankowych. '
+    responsibilityKeys: [
+      'firstComperiaResp1',
+      'firstComperiaResp2',
     ],
     skills: ["PHP", 'Symfony', 'JavaScript', 'Vue', 'Nuxt', 'K8S', 'Docker', 'Google Cloud Platform', 'Microservices']
   },
@@ -387,9 +387,9 @@ const experience = ref([
     dateTo: '03.2018',
     companyName: 'Konsult Expert',
     i8nCode: 'konsultExpert',
-    responsibilities: [
-      'Rozwijanie platformy medycznej do konsultacji online.',
-      'Tworzenie nowych funkcjonalności backendowych i frontendowych.',
+    responsibilityKeys: [
+      'konsultExpertResp1',
+      'konsultExpertResp2',
     ],
     skills: ["PHP", 'Symfony', 'JavaScript']
   }
