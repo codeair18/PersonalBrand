@@ -7,7 +7,7 @@ const experiencePl = ref([
     dateInterval: '06.2023 — __.____',
     dateFrom: '06.2023',
     dateTo: 'present',
-    companyName: 'Comperia Pay',
+    companyName: 'Comfino',
     isPartTime: false,
     companyLink: 'https://comfino.pl',
     projects: [
@@ -151,7 +151,7 @@ const experienceEn = ref([
     dateInterval: '06.2023 — __.____',
     dateFrom: '06.2023',
     dateTo: 'present',
-    companyName: 'Comperia Pay',
+    companyName: 'Comfino',
     isPartTime: false,
     companyLink: 'https://comfino.pl',
     projects: [
@@ -326,6 +326,7 @@ const educationEn = ref([
     skills: ['PHP', 'Symfony', 'jQUery', 'MVC', 'Javascript', 'HTML', 'CSS', 'Bootstrap']
   },
 ])
+
 
 // Computed properties for locale-based content
 const experience = computed(() => {

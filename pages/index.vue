@@ -241,7 +241,7 @@ const experience = ref([
     dateInterval: '06.2023 — __.____',
     dateFrom: '06.2023',
     dateTo: 'present',
-    companyName: 'Comperia Pay',
+    companyName: 'Comfino',
     isPartTime: false,
     companyLink: 'https://comfino.pl',
     projects: [

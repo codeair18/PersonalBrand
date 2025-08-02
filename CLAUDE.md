@@ -12,7 +12,7 @@ This is a personal brand website built with Nuxt 3, featuring a portfolio/CV lay
 ```bash
 npm run dev
 ```
-Note: Development server runs with HTTPS using self-signed certificates (localhost.crt/localhost.key) on port 3000.
+Note: Development server runs with HTTPS using self-signed certificates (localhost.crt/localhost.key) on port 3001.
 
 ### Build Commands
 ```bash
@@ -121,3 +121,8 @@ When working with this codebase:
 - `i18n.config.ts:4-42` - All translatable content
 - `nuxt.config.ts` - Core framework configuration
 - `app.config.ts` - UI theme settings
+# important-instruction-reminders
+Do what has been asked; nothing more, nothing less.
+NEVER create files unless they're absolutely necessary for achieving your goal.
+ALWAYS prefer editing an existing file to creating a new one.
+NEVER proactively create documentation files (*.md) or README files. Only create documentation files if explicitly requested by the User.

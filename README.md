@@ -1,76 +1,79 @@
-# Nuxt UI Minimal Starter
+# Personal Brand Website
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+A modern personal portfolio and CV website built with Nuxt 3, showcasing professional experience, skills, and projects with multilingual support and responsive design.
 
-## Setup
+## Features
 
-Make sure to install the dependencies:
+- **Multilingual Support** - Polish and English localization
+- **Dark/Light Mode** - Theme switcher with custom CSS variables
+- **Responsive Design** - Mobile-first approach with interactive elements
+- **Portfolio & CV Pages** - Dedicated layouts for different content types
+- **HTTPS Development** - Secure local development environment
+
+## Technology Stack
+
+- **Nuxt 3** - Vue.js framework with SSR/SSG support
+- **Vue 3** - Frontend framework with Composition API
+- **TypeScript** - Type-safe JavaScript
+- **Nuxt UI** - Component library with Tailwind CSS
+- **Sass** - CSS preprocessor
+- **VueUse** - Composition utilities
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (latest LTS version recommended)
+- npm
+
+### Installation
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### Development Server
 
-Start the development server on `http://localhost:3000`:
+Start the development server with HTTPS on port 3001:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+The site will be available at `https://localhost:3001`
 
-Build the application for production:
+### Build Commands
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run build      # Build for production
+npm run generate   # Generate static site
+npm run preview    # Preview production build
 ```
 
-Locally preview production build:
+## Project Structure
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+```
+├── components/
+│   └── switcher/           # Theme switcher components
+├── pages/
+│   ├── index.vue          # Main portfolio page
+│   └── cv.vue             # CV/resume page
+├── public/
+│   └── static/            # Static assets
+├── server/                # Server-side code
+├── app.vue               # Root component
+├── nuxt.config.ts        # Nuxt configuration
+├── app.config.ts         # App configuration
+├── i18n.config.ts        # Internationalization config
+└── CLAUDE.md             # Development guidelines
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# PersonalBrand
+## Development
+
+The project uses:
+- Self-signed SSL certificates for HTTPS development
+- Custom CSS variables for theming
+- Reactive data structures for experience and skills
+- Auto-imported components
+
+For detailed development guidelines, see [CLAUDE.md](./CLAUDE.md).
