@@ -502,7 +502,7 @@ const cvClauseFinal = cvClause.replace('__COMPANY_NAMES__', companyNames);
           </svg>
         </a></li>
       <li class="mr-5 text-xs shrink-0 cursor-pointer"><a
-        href="https://www.instagram.com/przemek_da_kowalczyk"
+        href="https://www.instagram.com/przem.kowalczyk"
         target="_blank"
         rel="noreferrer noopener"
         aria-label="Instagram (opens in a new tab)"

@@ -50,7 +50,7 @@
             </div>
           </a>
           
-          <a href="https://www.instagram.com/przemek_da_kowalczyk" target="_blank" rel="noreferrer noopener" class="link-card">
+          <a href="https://www.instagram.com/przem.kowalczyk" target="_blank" rel="noreferrer noopener" class="link-card">
             <div class="flex items-center gap-3">
               <UIcon name="i-simple-icons-instagram" class="text-xl" />
               <div>
