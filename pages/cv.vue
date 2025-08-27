@@ -366,7 +366,7 @@ const cvClauseFinal = cvClause.replace('__COMPANY_NAMES__', companyNames);
         <a href="/">Przemek Kowalczyk</a>
       </h1>
       <h2 class="mt-3 text-lg font-medium tracking-tight text-gray-400 sm:text-xl">
-        Developer
+        Lead Full Stack Developer
       </h2>
       <p class="mt-4 max-w-md">{{ $t('aboutMe') }}</p>
       <ul class="experience__tech my-5 lg:mt-2 flex flex-wrap lg:mr-32">
